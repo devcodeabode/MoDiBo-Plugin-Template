@@ -5,12 +5,12 @@
 /**
  * A one stop shop for all things a MoDiBo Plugin could need!
  */
-const utils = require("../../src/utils.js")
+import { reply, createEmbed, COLORS, logger } from '../../src/utils.js'
 
 /**
  * Access to the configuration
  */
-const configManager = require("../../src/configManager.js")
+import { config } from '../../src/configManager.js';
 
 /**
  * The display name of the plugin.
@@ -52,20 +52,29 @@ function help(command = null, args = null) {
  * @param {Discord.Client} bot The instantiated Discord Bot object.
  * @param {Discord.Message} message An object representing the message sent.
  */
-function processCommand(command, args, bot, message) {}
+async function processCommand(command, args, bot, message) { }
 
 /**
  * Handles all incoming messages.
  * @param {Discord.Client} bot The instantiated Discord Bot object.
  * @param {Discord.Message} message An object representing the message sent.
  */
-function processMessage(bot, message) {}
+async function processMessage(bot, message) { }
+
+/**
+ * 
+ * @param {Discord.Client} bot The instantiated Discord Bot object.
+ * @param {Discord.Reaction} reaction Message Reaction object
+ * @param {Discord.User} user User object of the user that reacted
+ * @param {boolean} isAdd true if the user added the reaction, false if they removed it.
+ */
+async function processReaction(bot, reaction, user, isAdd) { }
 
 /**
  * Called after all plugins loaded to start tasks on an interval.
  * @param {Discord.Client} bot The instantiated Discord Bot object.
  */
-function startCron(bot) {}
+function startCron(bot) { }
 
 /**
  * Runs when the plugin is first loaded if exported below.
@@ -84,6 +93,7 @@ module.exports = {
   help,
   processCommand,
   processMessage,
+  processReaction,
   startCron,
   onLoad,
 }
