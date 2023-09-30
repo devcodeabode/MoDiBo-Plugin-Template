@@ -81,7 +81,7 @@ function startCron(bot) { }
  * @param {Discord.Client} bot The instantiated Discord Bot object.
  */
 function onLoad(bot) {
-  utils.logger.log("debug", `${NAME} has started.`)
+  logger.log("debug", `${NAME} has started.`)
 }
 
 export default {
