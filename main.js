@@ -84,7 +84,7 @@ function onLoad(bot) {
   utils.logger.log("debug", `${NAME} has started.`)
 }
 
-module.exports = {
+export default {
   NAME,
   SLUG,
   SHORT_HELP,
